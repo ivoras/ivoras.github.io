@@ -99,7 +99,7 @@
 
 			iframe_url = iframe_base + "?iznos=" + paymentParams.Iznos + "&IBAN=" + paymentParams.IBAN + "&modelPlacanja=" + paymentParams.ModelPlacanja + "&pozivNaBroj=" + paymentParams.PozivNaBroj + "&opisPlacanja=" + paymentParams.OpisPlacanja + "&aspect=" + aspect;
 			updateIFRAMEurl();
-
+/*
 			var textToEncode = BarcodePayment.GetEncodedText(paymentParams);
 
 			if (textToEncode == BarcodePayment.ResultCode.InvalidContent) {
@@ -145,9 +145,10 @@
 					y += bh;
 				}
 			}
+      */
 		}
 
-	</script>
+</script>
 
 </head>
 
@@ -399,7 +400,7 @@
 			<input type="text" name="aspect" id="aspect" pattern="^[0-9]+$" placeholder="2" maxlength="3" size="3" value="2"><br>
 
 
-			<br><a href="javascript:;" onclick="jQuery('dodatnaPolja').toggle();">Prikaži/Sakrij dodatna polja</a>
+			<br><a href="javascript:;" onclick="jQuery('#dodatnaPolja').toggle();">Prikaži/Sakrij dodatna polja</a>
 			<hr>
 			<div id="dodatnaPolja" style="display: none;">
 
@@ -444,11 +445,6 @@ title="Barkod" width="450" height="200" style="display: block; margin-left: auto
 		<iframe id="iframe" src="https://ivoras.github.io/generator-barkoda-uplatnica/iframe.html?iznos=1000,00&IBAN=HR4523400093101015117&modelPlacanja=00&pozivNaBroj=0&opisPlacanja=Konzultacije" title="Barkod" width="450" height="200" style="display: block; margin-left: auto; margin-right: auto"></iframe>
 
 		<p>Testirano je s WordPressom, gdje je potrebno odabrati "HTML" blok i unutra upisati gornji kod.</p>
-		
-		<h2>Objašnjenje</h2>
-		
-		<p>Bar-kod se u oba slučaja generira client-side u JavaScriptu, ova skripta ne poziva ništa na serveru. Zbog toga je prikladna
-		za web aplikacije, ali nije prikladna recimo za sadržaj e-maila.</p>
 
 		<h2>Credits</h2>
 		<p>Originalni kod je sa <a href="https://bikonja.github.io/generator-barkoda-uplatnica/">https://bikonja.github.io/generator-barkoda-uplatnica/</a></p>
