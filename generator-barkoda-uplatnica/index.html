@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-	<title>Generator barkoda uplatnica PLUS (u EUR)</title>
+	<title>Generator barkoda uplatnica PLUS</title>
 	<script src="./static/jquery-latest.min.js"></script>
 	<script src="./static/bcmath-min.js"></script>
 	<script src="./static/pdf417-min.js"></script>
@@ -157,6 +157,8 @@
 
 		<h1>Generator barkoda za uplatnice</h1>
 		<p>
+			Ovo je web servis koji generira IFRAME koji prikazuje 2D barkod za plaćanje (prema <a href="https://www.hub.hr/hr/format-zapisa-pdf417-2d-bar-koda-prema-hub3-standardu">standardu HUB-a</a>)
+			koji se može skenirati u m-banking aplikacijama i sl.</p>
 			Ovaj barkod se može skenirati u bilo kojoj mobilnoj aplikaciji za bankarstvo da bi se olakšalo plaćanje. Prisutne su dvije opcije: prva je
 			da popunite formular u nastavku i on će vam generirati barkod kojeg možete spremiti i koristiti gdje god želite kao sliku. Druga opcija je
 			da, ako radite web shop ili sličnu uslugu, koristite generirani bar-kod unutar svog weba, tako da u URL od IFRAME-a upišete podatke za
@@ -166,11 +168,11 @@
 		<h2>Formular</h2>
 		Podaci za plaćanje:
 		<fieldset>
-			<label for="iznos">Iznos u EUR:</label><br>
+			<label for="iznos">Iznos (u formatu 123,45):</label><br>
 			<input type="text" id="iznos" pattern="^[0-9]+,[0-9]{2}$" placeholder="0,00" maxlength="16" size="16"><br>
 
-			<label for="brRacuna">Račun primatelja (IBAN):</label><br>
-			<input type="text" id="brRacuna" maxlength="21" size="21"><br>
+			<label for="brRacuna">Račun primatelja (IBAN, u formatu HR....):</label><br>
+			<input type="text" id="brRacuna" maxlength="21" size="30"><br>
 
 			<label for="modelPlacanja">Model plaćanja:</label><br>
 			<select id="modelPlacanja">
@@ -223,10 +225,10 @@
 			</select><br>
 
 			<label for="pozivNaBroj">Poziv na broj:</label><br>
-			<input type="text" id="pozivNaBroj" maxlength="22"><br>
+			<input type="text" id="pozivNaBroj" maxlength="22" value="00"><br>
 
 			<label for="opisPlacanja">Opis plaćanja:</label><br>
-			<input type="text" id="opisPlacanja" maxlength="35" size="35"><br>
+			<input type="text" id="opisPlacanja" maxlength="35" size="35" value="Donacija"><br>
 
 			<label for="sifraNamjene">Šifra namjene:</label><br>
 			<select id="sifraNamjene">
